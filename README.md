@@ -44,7 +44,7 @@ You could either extend `AbstractCardBalanceReceiver` if you want to handle the 
 ```java
 public class CardBalanceActivity extends AbstractCardBalanceActivity{
     @Override
-    protected void onReceiveCardBalance(Context context, CardBalance balance) {
+    protected void onReceiveCardBalance(CardBalance balance) {
         //TODO do something with the balance
     }
 }

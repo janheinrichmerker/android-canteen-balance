@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cardBalance"
+            type="com.heinrichreimer.canteenbalance.cardreader.CardBalance"/>
+
+        <import
+            alias="View"
+            type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_card_balance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context="com.heinrichreimer.canteenbalance.demo.CardBalanceActivity">
+
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/baseline"
+            android:text="@{cardBalance == null ? @string/label_balance_empty : @string/label_balance_euro(cardBalance.balance)}"
+            tools:text="Balance:\n13,50 €"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="?android:textColorPrimary"/>
+
+        <TextView
+            android:id="@+id/last"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/baseline"
+            android:visibility="@{cardBalance.lastTransactionSupported ? View.VISIBLE : View.GONE}"
+            android:text='@{cardBalance.lastTransactionSupported ? @string/label_last_transaction_euro(cardBalance.lastTransaction) : ""}'
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:visibility="visible"
+            tools:text="Latest transaction:\n1,50 €"/>
+
+    </LinearLayout>
+
+</layout>

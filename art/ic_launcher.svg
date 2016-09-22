@@ -1,0 +1,82 @@
+<svg width="192" height="192" viewBox="0 0 192 192" version="2.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>ic_launcher.svg</title>
+<desc>Created using Figma 0.90</desc>
+<g id="Canvas" figma:type="canvas">
+<mask id="mask0_outline" mask-type="alpha">
+<path d="M 0 0L 192 0L 192 192L 0 192L 0 0Z" fill="#FFFFFF"/>
+</mask>
+<g id="ic_launcher" style="mix-blend-mode:normal;" mask="url(#mask0_outline)" figma:type="frame">
+<g id="Icon" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="Background" style="mix-blend-mode:normal;" filter="url(#filter0_dii)" figma:type="frame">
+<g id="Card" style="mix-blend-mode:normal;" figma:type="rounded-rectangle">
+<use xlink:href="#path0_fill" transform="translate(8 32)" fill="#673AB7" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Stripe" style="mix-blend-mode:normal;" figma:type="rounded-rectangle">
+<use xlink:href="#path1_fill" transform="translate(8 64)" fill="#311B92" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+<g id="Foreground" style="mix-blend-mode:normal;" filter="url(#filter1_dii)" figma:type="frame">
+<g id="Vector" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path2_fill" transform="translate(47.9897 54.9576)" fill="#FAFAFA" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+<g id="Finish" style="mix-blend-mode:normal;" figma:type="rounded-rectangle">
+<use xlink:href="#path0_fill" transform="translate(7.99999 32)" fill="url(#paint3_radial)" fill-opacity="0.2" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_dii" filterUnits="userSpaceOnUse" x="4" y="32" width="184" height="136" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<desc>type="dropShadow" x="0" y="4" size="4" spread="0" color="0.101961,0.137255,0.494118,0.2" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.101961 0 0 0 0 0.137255 0 0 0 0 0.494118 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+<desc>type="innerShadow" x="0" y="-1" size="0" spread="0" color="0.101961,0.137255,0.494118,0.2" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0" result="hardAlpha"/>
+<feOffset dx="0" dy="-1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.101961 0 0 0 0 0.137255 0 0 0 0 0.494118 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+<desc>type="innerShadow" x="0" y="1" size="0" spread="0" color="1,1,1,0.2" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0" result="hardAlpha"/>
+<feOffset dx="0" dy="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="effect2_innerShadow" result="effect3_innerShadow"/>
+</filter>
+<filter id="filter1_dii" filterUnits="userSpaceOnUse" x="43" y="54" width="106" height="92" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<desc>type="dropShadow" x="0" y="4" size="4" spread="0" color="0,0,0,0.1" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+<desc>type="innerShadow" x="0" y="1" size="0" spread="0" color="1,1,1,0.4" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0" result="hardAlpha"/>
+<feOffset dx="0" dy="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+<desc>type="innerShadow" x="0" y="-1" size="0" spread="0" color="0,0,0,0.1" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0" result="hardAlpha"/>
+<feOffset dx="0" dy="-1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="effect2_innerShadow" result="effect3_innerShadow"/>
+</filter>
+<radialGradient id="paint3_radial" cx="0.5" cy="0.5" r="0.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(352 0 1.21295e-05 484 -176 -242)">
+<stop offset="0" stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</radialGradient>
+<path id="path0_fill" d="M 0 12C 0 5.37258 5.37258 0 12 0L 164 0C 170.627 0 176 5.37258 176 12L 176 116C 176 122.627 170.627 128 164 128L 12 128C 5.37258 128 0 122.627 0 116L 0 12Z"/>
+<path id="path1_fill" d="M 0 0L 176 0L 176 32L 0 32L 0 0Z"/>
+<path id="path2_fill" d="M 40.4918 17.8957C 40.4918 17.8957 43.6918 16.4557 45.7185 18.749C 47.7451 21.0957 52.9185 30.0557 52.9185 39.0157C 52.9185 47.9757 50.6785 57.5224 48.2785 60.669C 45.9851 63.869 43.6918 63.869 41.9318 62.6957C 40.2251 61.5757 13.3451 41.0424 11.9051 40.4557C 10.4118 39.869 9.87847 41.309 11.3185 49.0424C 12.7585 57.0424 10.4118 59.229 8.38514 59.549C 6.4118 59.709 0.331803 58.109 0.0118027 41.8957C -0.254864 25.7357 4.06514 23.1224 6.0918 23.1224C 9.87847 23.1224 38.7851 49.0424 40.7585 48.829C 42.5185 48.5624 43.3718 37.5757 40.0118 28.8824C 36.1718 19.4957 40.4918 17.8957 40.4918 17.8957ZM 86.9451 1.7357C 96.6518 20.989 96.0118 39.229 96.0118 41.0424C 96.0118 42.8557 96.6518 61.0957 86.9451 80.349C 86.9451 80.349 84.4385 83.2824 80.6518 81.5224C 76.9185 79.7624 78.1985 75.1757 78.1985 75.1757C 78.1985 75.1757 86.0918 59.9757 85.8785 41.309L 85.8785 41.0424C 86.0918 22.3757 78.1985 6.90903 78.1985 6.90903C 78.1985 6.90903 76.9185 2.32237 80.6518 0.562367C 84.4385 -1.19763 86.9451 1.7357 86.9451 1.7357ZM 68.1185 10.3757C 76.0651 24.829 75.5318 39.229 75.4251 41.0424C 75.5318 42.8557 76.0651 56.6157 68.1185 72.2424C 68.1185 72.2424 65.6118 75.1757 61.8251 73.4157C 58.0918 71.6557 59.3718 67.069 59.3718 67.069C 59.3718 67.069 64.4918 59.709 65.2918 41.309L 65.2918 41.0424C 64.7585 22.5357 59.3718 15.6024 59.3718 15.6024C 59.3718 15.6024 58.0918 10.9624 61.8251 9.2557C 65.6118 7.4957 68.1185 10.3757 68.1185 10.3757Z"/>
+</defs>
+</svg>

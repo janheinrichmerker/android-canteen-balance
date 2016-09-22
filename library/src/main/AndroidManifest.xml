@@ -1,0 +1,22 @@
+<manifest package="com.heinrichreimer.canteenbalance"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.NFC"/>
+
+    <application>
+
+        <activity android:name=".app.TechDiscoveredActivity"
+            android:theme="@style/Theme.Ghost">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/tech" />
+        </activity>
+
+    </application>
+
+</manifest>

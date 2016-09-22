@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_balance_euro">Guthaben:\n%s €</string>
+    <string name="label_balance_empty">Auf Mensakarte legen</string>
+    <string name="label_last_transaction_euro">Letzte Abbuchung:\n%s €</string>
+</resources>

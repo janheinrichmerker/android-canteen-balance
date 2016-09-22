@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">android-canteen-balance</string>
+    <string name="label_balance_euro">Balance:\n%s €</string>
+    <string name="label_balance_empty">Place on Mensa card</string>
+    <string name="label_last_transaction_euro">Latest transaction:\n%s €</string>
+</resources>

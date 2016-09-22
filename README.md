@@ -13,7 +13,7 @@ Supports the following cards:
 
 * [InterCard](http://www.intercard.de/cms/intercard/index.html)
 * [Ximedes](https://www.ximedes.com/paytech/) (formerly [MagnaCarta](https://www.ximedes.com/ximedes-press-release/))
-(Full list of tested universities at the bottom of the page.)
+([Full list](https://github.com/HeinrichReimer/android-canteen-balance/tree/master#tested-university-cards) of tested universities at the bottom of the page.)
 
 Dependency
 ----------

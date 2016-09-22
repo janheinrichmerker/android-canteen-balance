@@ -22,15 +22,16 @@ package com.heinrichreimer.canteenbalance.cardreader.desfire.util;
  */
 public class ArrayUtils {
 
-    private ArrayUtils() {}
+    private ArrayUtils() {
+    }
 
 
     /**
      * <p>Reverses the order of the given array.
-     *
+     * <p>
      * <p>This method does nothing for a {@code null} input array.
      *
-     * @param array  the array to reverse, may be {@code null}
+     * @param array the array to reverse, may be {@code null}
      */
     public static void reverse(final byte[] array) {
         if (array == null) {
@@ -42,18 +43,15 @@ public class ArrayUtils {
     /**
      * <p>
      * Reverses the order of the given array in the given range.
-     * 
+     * <p>
      * <p>
      * This method does nothing for a {@code null} input array.
-     * 
-     * @param array
-     *            the array to reverse, may be {@code null}
-     * @param startIndexInclusive
-     *            the starting index. Undervalue (&lt;0) is promoted to 0, overvalue (&gt;array.length) results in no
-     *            change.
-     * @param endIndexExclusive
-     *            elements up to endIndex-1 are reversed in the array. Undervalue (&lt; start index) results in no
-     *            change. Overvalue (&gt;array.length) is demoted to array length.
+     *
+     * @param array               the array to reverse, may be {@code null}
+     * @param startIndexInclusive the starting index. Undervalue (&lt;0) is promoted to 0, overvalue (&gt;array.length) results in no
+     *                            change.
+     * @param endIndexExclusive   elements up to endIndex-1 are reversed in the array. Undervalue (&lt; start index) results in no
+     *                            change. Overvalue (&gt;array.length) is demoted to array length.
      * @since 3.2
      */
     private static void reverse(final byte[] array, final int startIndexInclusive, final int endIndexExclusive) {

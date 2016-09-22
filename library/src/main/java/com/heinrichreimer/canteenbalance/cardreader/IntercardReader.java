@@ -22,8 +22,6 @@
 
 package com.heinrichreimer.canteenbalance.cardreader;
 
-import android.util.Log;
-
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireException;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireFileSettings;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireProtocol;
@@ -32,7 +30,6 @@ import com.heinrichreimer.canteenbalance.cardreader.desfire.util.DesfireUtils;
 import java.math.BigDecimal;
 
 class IntercardReader implements ICardReader {
-	private static final String TAG = IntercardReader.class.getName();
 
     private static final BigDecimal THOUSAND = new BigDecimal(1000);
 
@@ -41,11 +38,11 @@ class IntercardReader implements ICardReader {
 
 		final int appId = 0x5F8415;
 		final int fileId = 1;
-		Log.i(TAG,"Selecting app and file");
+		// Selecting app and file
 		DesfireFileSettings settings = DesfireUtils.selectAppFile(card, appId, fileId);
 
 		if (settings instanceof DesfireFileSettings.ValueDesfireFileSettings) {
-			Log.i(TAG,"found value file");
+			// Found value file
 
             // Last transaction in tenths of Euro cents
 			int lastTransactionTenthsOfCents = ((DesfireFileSettings.ValueDesfireFileSettings) settings).value;
@@ -54,24 +51,24 @@ class IntercardReader implements ICardReader {
             BigDecimal lastTransaction = new BigDecimal(lastTransactionTenthsOfCents)
                     .divide(THOUSAND, 4, BigDecimal.ROUND_HALF_UP);
 
-			Log.i(TAG, "Reading value");
+			// Reading value
 			try {
 				// Balance in tenths of Euro cents
 				int balanceTenthsOfCents = card.readValue(fileId);
 
 				// Balance in Euro
 				BigDecimal balance = new BigDecimal(balanceTenthsOfCents)
-                        .divide(THOUSAND, 4, BigDecimal.ROUND_HALF_UP);
+						.divide(THOUSAND, 4, BigDecimal.ROUND_HALF_UP);
 
 
 				return new CardBalance(balance, lastTransaction);
 			} catch (Exception e) {
-				Log.w(TAG,"Exception while trying to read value",e);
 				return null;
 			}
 
-		} else {
-			Log.i(TAG,"File is not a value file, tag is incompatible.");
+		}
+		else {
+			// File is not a value file, tag is incompatible
 			return null;
 		}
 	}

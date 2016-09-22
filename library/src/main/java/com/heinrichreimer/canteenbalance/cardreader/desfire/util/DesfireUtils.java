@@ -30,7 +30,8 @@ import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireProtocol;
 
 public class DesfireUtils {
 
-    private DesfireUtils() {}
+    private DesfireUtils() {
+    }
 
     public static int byteArrayToInt(byte[] b) {
         return byteArrayToInt(b, 0);
@@ -56,17 +57,17 @@ public class DesfireUtils {
         return value;
     }
 
-	@Nullable
+    @Nullable
     public static DesfireFileSettings selectAppFile(DesfireProtocol tag, int appID, int fileID) {
-		try {
-			tag.selectApp(appID);
-		} catch (DesfireException e) {
-			return null;
-		}
-		try {
-			return tag.getFileSettings(fileID);
-		} catch (DesfireException e) {
-			return null;
-		}
-	}
+        try {
+            tag.selectApp(appID);
+        } catch (DesfireException e) {
+            return null;
+        }
+        try {
+            return tag.getFileSettings(fileID);
+        } catch (DesfireException e) {
+            return null;
+        }
+    }
 }

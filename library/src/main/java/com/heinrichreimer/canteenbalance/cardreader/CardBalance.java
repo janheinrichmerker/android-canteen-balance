@@ -39,6 +39,7 @@ public class CardBalance {
 
     private static final DecimalFormat GERMAN_NUMBER_FORMAT =
             (DecimalFormat) NumberFormat.getInstance(Locale.GERMAN);
+
     static {
         GERMAN_NUMBER_FORMAT.setMinimumFractionDigits(2);
         GERMAN_NUMBER_FORMAT.setMaximumFractionDigits(2);
@@ -49,21 +50,22 @@ public class CardBalance {
     public static final String ACTION_CARD_BALANCE =
             "com.heinrichreimer.canteenbalance.action.CARD_BALANCE";
 
-	/**
+    /**
      * Current balance on card in Euros or any other currency.
-	 */
-	private BigDecimal balance;
+     */
+    private BigDecimal balance;
     /**
      * Last transaction in Euros or any other currency, null if not supported by card.
      */
-	private BigDecimal lastTransaction;
+    private BigDecimal lastTransaction;
 
-    public CardBalance() {}
+    public CardBalance() {
+    }
 
     CardBalance(BigDecimal balance, BigDecimal lastTransaction) {
-		this.balance = balance;
-		this.lastTransaction = lastTransaction;
-	}
+        this.balance = balance;
+        this.lastTransaction = lastTransaction;
+    }
 
     @Nullable
     public static CardBalance fromBundle(Bundle in) {

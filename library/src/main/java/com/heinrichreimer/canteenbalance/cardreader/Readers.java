@@ -24,7 +24,6 @@ package com.heinrichreimer.canteenbalance.cardreader;
 
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
-import android.util.Log;
 
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireException;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireProtocol;
@@ -32,76 +31,73 @@ import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireProtocol;
 import java.io.IOException;
 
 public class Readers implements ICardReader {
-	private static final String TAG = Readers.class.getName();
-	private static Readers instance;
-	private final ICardReader[] readers = new ICardReader[]{
-			new MagnaCartaReader(),
-			new IntercardReader()};
+    private static Readers instance;
+    private final ICardReader[] readers = new ICardReader[]{
+            new MagnaCartaReader(),
+            new IntercardReader()};
 
 
-	@Override
-	public CardBalance readCard(DesfireProtocol card) throws DesfireException {
-		Log.i(TAG,"Trying all readers");
-		for (ICardReader reader : readers) {
-			Log.i(TAG,"Trying "+reader.getClass().getSimpleName());
-			CardBalance val = reader.readCard(card);
-			if (val!=null)
-				return val;
-		}
-		return null;
-	}
+    @Override
+    public CardBalance readCard(DesfireProtocol card) throws DesfireException {
+        // Trying all readers
+        for (ICardReader reader : readers) {
+            CardBalance val = reader.readCard(card);
+            if (val != null)
+                return val;
+        }
+        return null;
+    }
 
 
-	public CardBalance readTag(Tag tag) throws DesfireException {
-		Log.i(TAG,"Loading tag");
-		IsoDep tech = IsoDep.get(tag);
+    public CardBalance readTag(Tag tag) throws DesfireException {
+        // Loading tag
+        IsoDep tech = IsoDep.get(tag);
 
-		try {
-			tech.connect();
-		} catch (IOException e) {
-			//Tag was removed. We fail silently.
-			e.printStackTrace();
-			return null;
-		}
+        try {
+            tech.connect();
+        } catch (IOException e) {
+            //Tag was removed. We fail silently.
+            e.printStackTrace();
+            return null;
+        }
 
-		try {
-			DesfireProtocol desfireTag = new DesfireProtocol(tech);
-
-
-			//Android has a Bug on Devices using a Broadcom NFC chip. See
-			// http://code.google.com/p/android/issues/detail?id=58773
-			//A Workaround is to connected to the tag, issue a dummy operation and then reconnect...
-			try {
-				desfireTag.selectApp(0);
-			}catch (ArrayIndexOutOfBoundsException e) {
-				//Exception occurs because the actual response is shorter than the error response
-				Log.i(TAG, "Broadcom workaround was needed");
-			}
-
-			tech.close();
-			tech.connect();
-
-			return Readers.getInstance().readCard(desfireTag);
+        try {
+            DesfireProtocol desfireTag = new DesfireProtocol(tech);
 
 
-		} catch (IOException e) {
-			//This can only happen on tag close. we ignore this.
-			e.printStackTrace();
-			return null;
-		} finally {
-			if (tech.isConnected())
-				try {
-					tech.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-		}
+            //Android has a Bug on Devices using a Broadcom NFC chip. See
+            // http://code.google.com/p/android/issues/detail?id=58773
+            //A Workaround is to connected to the tag, issue a dummy operation and then reconnect...
+            try {
+                desfireTag.selectApp(0);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                //Exception occurs because the actual response is shorter than the error response
+            }
 
-	}
+            tech.close();
+            tech.connect();
 
-	public static Readers getInstance() {
-		if (instance == null)
-			instance = new Readers();
-		return instance;
-	}
+            return Readers.getInstance().readCard(desfireTag);
+
+
+        } catch (IOException e) {
+            //This can only happen on tag close. we ignore this.
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (tech.isConnected())
+                try {
+                    tech.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+
+    }
+
+    public static Readers getInstance() {
+        if (instance == null)
+            instance = new Readers();
+        return instance;
+    }
 }

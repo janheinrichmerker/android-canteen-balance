@@ -26,7 +26,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.heinrichreimer.canteenbalance.cardreader.CardBalance;
 import com.heinrichreimer.canteenbalance.cardreader.Readers;
@@ -34,37 +33,36 @@ import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireException;
 
 public class TechDiscoveredActivity extends AppCompatActivity {
 
-	private static final String DEBUG_TAG = "TechDiscoveredActivity";
+    private static final String DEBUG_TAG = "TechDiscoveredActivity";
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(getIntent().getAction())) {
-			onNewIntent(getIntent());
-		}
-	}
+        if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(getIntent().getAction())) {
+            onNewIntent(getIntent());
+        }
+    }
 
-	@Override
-	protected void onNewIntent(Intent intent) {
-		super.onNewIntent(intent);
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
 
-		if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
+        if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
 
-			Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-			try {
-				CardBalance balance = Readers.getInstance().readTag(tag);
+            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+            try {
+                CardBalance balance = Readers.getInstance().readTag(tag);
                 if (balance != null) {
                     Log.d(DEBUG_TAG, balance.toString());
-                    Toast.makeText(this, balance.toString(), Toast.LENGTH_SHORT).show();
 
                     Intent broadcast = new Intent(CardBalance.ACTION_CARD_BALANCE);
                     broadcast.putExtras(balance.toBundle());
                     sendBroadcast(broadcast);
                 }
-			} catch (DesfireException ignored) {
+            } catch (DesfireException ignored) {
                 // Card is not supported
-			}
-		}
-	}
+            }
+        }
+    }
 }

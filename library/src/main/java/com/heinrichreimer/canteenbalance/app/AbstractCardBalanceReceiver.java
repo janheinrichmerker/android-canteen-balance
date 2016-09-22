@@ -31,7 +31,7 @@ public abstract class AbstractCardBalanceReceiver extends BroadcastReceiver {
     @Override
     public final void onReceive(Context context, Intent intent) {
         Bundle extras = intent.getExtras();
-        if(extras != null) {
+        if (extras != null) {
             CardBalance balance = CardBalance.fromBundle(extras);
             if (balance != null) {
                 onReceiveCardBalance(context, balance);

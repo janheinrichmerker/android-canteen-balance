@@ -23,10 +23,11 @@
 package com.heinrichreimer.canteenbalance.cardreader.desfire;
 
 public class DesfireException extends Exception {
-	DesfireException(String message) {
-		super(message);
-	}
-	DesfireException(Throwable cause) {
-		super(cause);
-	}
+    DesfireException(String message) {
+        super(message);
+    }
+
+    DesfireException(Throwable cause) {
+        super(cause);
+    }
 }

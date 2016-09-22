@@ -21,8 +21,11 @@
 package com.heinrichreimer.canteenbalance.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.heinrichreimer.canteenbalance.cardreader.CardBalance;
@@ -36,6 +39,22 @@ public abstract class AbstractCardBalanceActivity extends AppCompatActivity {
                     AbstractCardBalanceActivity.this.onReceiveCardBalance(balance);
                 }
             });
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                CardBalance balance = CardBalance.fromBundle(extras);
+                if (balance != null) {
+                    this.onReceiveCardBalance(balance);
+                }
+            }
+        }
+    }
 
     @Override
     public void onStart() {

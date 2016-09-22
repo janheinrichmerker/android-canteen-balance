@@ -25,16 +25,16 @@ package com.heinrichreimer.canteenbalance.cardreader;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireException;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireProtocol;
 
- interface ICardReader {
-	/**
-	 * Try to read data from a card.
-	 *
-	 * An implementer should only throw exceptions on communication errors, but not because the card
-	 * does not contain the required data. In that case, null should be returned.
-	 *
-	 * @param card The card to read
-	 * @return Card's data, null if unsupported.
-	 * @throws DesfireException Communication error
-	 */
-	 CardBalance readCard(DesfireProtocol card) throws DesfireException;
+interface ICardReader {
+    /**
+     * Try to read data from a card.
+     * <p>
+     * An implementer should only throw exceptions on communication errors, but not because the card
+     * does not contain the required data. In that case, null should be returned.
+     *
+     * @param card The card to read
+     * @return Card's data, null if unsupported.
+     * @throws DesfireException Communication error
+     */
+    CardBalance readCard(DesfireProtocol card) throws DesfireException;
 }

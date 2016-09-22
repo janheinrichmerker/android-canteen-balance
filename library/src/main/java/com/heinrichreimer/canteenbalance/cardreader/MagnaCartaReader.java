@@ -22,47 +22,43 @@
 
 package com.heinrichreimer.canteenbalance.cardreader;
 
-import android.util.Log;
-
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireException;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireProtocol;
 
 import java.math.BigDecimal;
 
- class MagnaCartaReader implements ICardReader {
-    private static final String TAG = MagnaCartaReader.class.getName();
+class MagnaCartaReader implements ICardReader {
 
     private static final BigDecimal HUNDRED = new BigDecimal(100);
 
-	@Override
-	public CardBalance readCard(DesfireProtocol card) {
-		final int appId = 0xF080F3;
-		final int fileId = 2;
+    @Override
+    public CardBalance readCard(DesfireProtocol card) {
+        final int appId = 0xF080F3;
+        final int fileId = 2;
 
-		//We don't want to use getFileSettings as they are doing some weird stuff with the fileType
-		try {
-			card.selectApp(appId);
+        //We don't want to use getFileSettings as they are doing some weird stuff with the fileType
+        try {
+            card.selectApp(appId);
 
-			//For some reason we can't use getFileList either, because the card answers with an
-			//authentication error
+            //For some reason we can't use getFileList either, because the card answers with an
+            //authentication error
 
-			byte[] data = card.readFile(fileId);
+            byte[] data = card.readFile(fileId);
 
-			int low = ((int) data[7]) & 0xFF;
-			int hi = ((int) data[6]) & 0xFF;
+            int low = ((int) data[7]) & 0xFF;
+            int hi = ((int) data[6]) & 0xFF;
 
             // Balance in cents
-			int cents = hi<<8 | low;
+            int cents = hi << 8 | low;
 
             // Balance in Euro
-			BigDecimal balance = new BigDecimal(cents)
+            BigDecimal balance = new BigDecimal(cents)
                     .divide(HUNDRED, 3, BigDecimal.ROUND_HALF_UP);
 
-			return new CardBalance(balance, null);
+            return new CardBalance(balance, null);
 
-		} catch (DesfireException e) {
-			Log.w(TAG,"Exception while reading tag");
-			return null;
-		}
-	}
+        } catch (DesfireException e) {
+            return null;
+        }
+    }
 }

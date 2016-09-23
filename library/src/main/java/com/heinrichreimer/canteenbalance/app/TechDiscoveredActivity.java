@@ -42,6 +42,9 @@ public class TechDiscoveredActivity extends AppCompatActivity {
         if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(getIntent().getAction())) {
             onNewIntent(getIntent());
         }
+        else {
+            finish();
+        }
     }
 
     @Override
@@ -64,5 +67,7 @@ public class TechDiscoveredActivity extends AppCompatActivity {
                 // Card is not supported
             }
         }
+
+        finish();
     }
 }

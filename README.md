@@ -30,7 +30,7 @@ allprojects {
 ```
 ```gradle
 dependencies {
-    compile 'com.heinrichreimersoftware:android-canteen-balance:0.1.1'
+    compile 'com.heinrichreimersoftware:android-canteen-balance:0.1.2'
 }
 ```
 

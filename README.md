@@ -5,7 +5,7 @@ android-canteen-balance
 
 [![JitPack](https://jitpack.io/v/com.heinrichreimersoftware/android-canteen-balance.svg)](https://jitpack.io/#com.heinrichreimersoftware/android-canteen-balance)
 [![Build Status](https://travis-ci.org/HeinrichReimer/android-canteen-balance.svg?branch=master)](https://travis-ci.org/HeinrichReimer/android-canteen-balance)
-[![GNU General Public License v3](https://img.shields.io/github/license/HeinrichReimer/android-canteen-balance.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![License](https://img.shields.io/github/license/HeinrichReimer/android-canteen-balance.svg)](https://github.com/HeinrichReimer/android-canteen-balance/blob/master/LICENSE.txt)
 
 Helper library to read out the current balance of canteen cards using NFC.
 

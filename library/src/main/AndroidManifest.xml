@@ -6,7 +6,8 @@
     <application>
 
         <activity android:name=".app.TechDiscoveredActivity"
-            android:theme="@style/Theme.Ghost">
+            android:theme="@style/Theme.Ghost"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.nfc.action.TECH_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />

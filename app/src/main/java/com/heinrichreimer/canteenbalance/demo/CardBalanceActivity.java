@@ -20,7 +20,7 @@
 
 package com.heinrichreimer.canteenbalance.demo;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.heinrichreimer.canteenbalance.app.AbstractCardBalanceActivity;

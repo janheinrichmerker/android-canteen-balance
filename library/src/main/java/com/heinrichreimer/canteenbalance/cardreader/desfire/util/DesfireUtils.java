@@ -22,7 +22,7 @@
 
 package com.heinrichreimer.canteenbalance.cardreader.desfire.util;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireException;
 import com.heinrichreimer.canteenbalance.cardreader.desfire.DesfireFileSettings;

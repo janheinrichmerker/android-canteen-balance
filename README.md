@@ -4,8 +4,8 @@ android-canteen-balance
 =======================
 
 [![JitPack](https://jitpack.io/v/com.heinrichreimersoftware/android-canteen-balance.svg)](https://jitpack.io/#com.heinrichreimersoftware/android-canteen-balance)
-[![Build Status](https://travis-ci.org/heinrichreimer/android-canteen-balance.svg?branch=master)](https://travis-ci.org/heinrichreimer/android-canteen-balance)
-[![License](https://img.shields.io/github/license/heinrichreimer/android-canteen-balance.svg)](https://github.com/heinrichreimer/android-canteen-balance/blob/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/janheinrichmerker/android-canteen-balance.svg?branch=master)](https://travis-ci.org/janheinrichmerker/android-canteen-balance)
+[![License](https://img.shields.io/github/license/janheinrichmerker/android-canteen-balance.svg)](https://github.com/janheinrichmerker/android-canteen-balance/blob/master/LICENSE.txt)
 
 Helper library to read out the current balance of canteen cards using NFC.
 
@@ -13,7 +13,7 @@ Supports the following cards:
 
 * [InterCard](http://www.intercard.de/cms/intercard/index.html)
 * [Ximedes](https://www.ximedes.com/paytech/) (formerly [MagnaCarta](https://www.ximedes.com/ximedes-press-release/))
-([Full list](https://github.com/heinrichreimer/android-canteen-balance/tree/master#tested-university-cards) of tested universities at the bottom of the page.)
+([Full list](https://github.com/janheinrichmerker/android-canteen-balance/tree/master#tested-university-cards) of tested universities at the bottom of the page.)
 
 Dependency
 ----------
@@ -70,7 +70,7 @@ Or statically publish an implementation in your AndroidManifest.xml:
     <application ...>
         <receiver android:name=".CardBalanceReceiver">
             <intent-filter>
-                <action android:name="com.heinrichreimer.canteenbalance.action.CARD_BALANCE"/>
+                <action android:name="com.janheinrichmerker.canteenbalance.action.CARD_BALANCE"/>
             </intent-filter>
         </receiver>
     </application>
@@ -80,7 +80,7 @@ Or statically publish an implementation in your AndroidManifest.xml:
 Changes
 -------
 
-See the [releases section](https://github.com/heinrichreimer/android-canteen-balance/releases) for detailed changelogs.
+See the [releases section](https://github.com/janheinrichmerker/android-canteen-balance/releases) for detailed changelogs.
 
 Open source libraries
 -------
@@ -128,7 +128,7 @@ License
 Copyright (C) 2016 Heinrich Reimer
 
 Authors:
-Heinrich Reimer <heinrich@heinrichreimer.com>
+Heinrich Reimer <heinrich@merker.id>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
